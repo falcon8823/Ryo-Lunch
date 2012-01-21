@@ -2,8 +2,8 @@
 寮食の献立配信サービス
 
 Authors:: Hayato Okumoto
-Version:: 0.1-dev 2011-01-21 okumoto
-Copyright:: Copyright (C) Hayato Okumoto, 2011. All rights reserved.
+Version:: 0.1-dev 2012-01-21 okumoto
+Copyright:: Copyright (C) Hayato Okumoto, 2012. All rights reserved.
 License:: 2-clause BSD License
 
 == What's this?
