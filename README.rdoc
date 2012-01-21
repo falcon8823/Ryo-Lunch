@@ -1,5 +1,5 @@
 = Ryo-Lunch
-寮食の献立配信サービス
+寮食堂の献立配信サービス
 
 Authors:: Hayato Okumoto
 Version:: 0.1-dev 2012-01-21 okumoto
@@ -7,21 +7,15 @@ Copyright:: Copyright (C) Hayato Okumoto, 2012. All rights reserved.
 License:: 2-clause BSD License
 
 == What's this?
-* これは長野高専の寮の献立配信サービス「Ryo-Lunch」です．
-* 現行では，手動あるいは半自動化で行われているサービスです．
-** このWebサービスではその作業を自動化し，さらに共有できるようにします．
+* これは寮食堂の献立配信サービス「Ryo-Lunch」です．
 
 == In future...
 * 寮食メニューを写真付きブログの様な形で提供します．
 * 寮食を通じたSNSを目指していきます．
 
-== Attention!
-* このサービスは，現段階では長野高専や長野高専学生寮とは無関係です．
-** 作者の思いつきです．．．
-
 == 開発履歴
 * 0.1 （現在開発中）
- * [予定] 献立登録機能
+ * 献立登録機能
  * [予定] 空メールによるユーザ登録機能
  * [予定] メール自動配信機能
 
