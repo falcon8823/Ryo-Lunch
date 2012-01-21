@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title RyoLunch
+    %title Ryo-Lunch
     = stylesheet_link_tag    "application", media: :all
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -19,7 +19,7 @@
     .topbar
       .topbar-inner
         .container
-          %h3= link_to "Ryo-Lunch", "/"
+          %h3= link_to "Ryo-Lunch", root_path
           %ul.nav
             %li= link_to "今日の献立", "#"
             %li= link_to "献立表", menu_path
