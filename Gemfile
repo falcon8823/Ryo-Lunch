@@ -35,6 +35,7 @@ gem 'jquery-rails', '2.0.0'
 # gem 'capistrano'
 
 gem 'haml-rails', '0.3.4'
+gem 'twitter-bootstrap-rails', '1.4.3'
 
 group :development, :test do
 	gem 'rspec-rails', '2.8.1'
