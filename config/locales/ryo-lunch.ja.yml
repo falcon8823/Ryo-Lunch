@@ -1,0 +1,13 @@
+ja:
+  date:
+    formats:
+      short: ! '%m月%d日（%a）'
+  activerecord:
+    models:
+      menu: "献立表"
+    
+    attributes:
+      menu:
+        date: "日付"
+        time: "時"
+        contents: "内容"
