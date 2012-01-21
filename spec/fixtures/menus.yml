@@ -1,0 +1,27 @@
+ex1-br:
+  id: 1
+  date: 2011-01-21
+  time: 1
+  contents: |-
+    牛乳
+    パン or ご飯
+    味噌汁
+    ハムエッグ
+    生野菜
+ex1-lu:
+  id: 2
+  date: 2011-01-21
+  time: 2
+  contents: |-
+    味噌ラーメン
+    フルーツポンチ
+    サラダバー
+ex1-ev:
+  id: 3
+  date: 2011-01-21
+  time: 3
+  contents: |-
+    チキンカレー
+    生野菜
+    野菜スープ
+

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @menu.date
+%p
+  %b Time:
+  = @menu.time
+%p
+  %b Contents:
+  = @menu.contents
+
+= link_to 'Edit', edit_menu_path(@menu)
+\|
+= link_to 'Back', menus_path
