@@ -2,8 +2,55 @@
 %html
   %head
     %title RyoLunch
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "application", media: :all
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    = yield
+    -if notice
+      .alert-message.info.hide
+        = notice
+    -if alert
+      .alert-message.warning.hide
+        = alert
+    -if danger = flash[:danger]
+      .alert-message.danger.hide
+        = danger
+
+    .topbar
+      .topbar-inner
+        .container
+          %h3= link_to "Ryo-Lunch", "/"
+          %ul.nav
+            %li= link_to "今日の献立", "#"
+            %li= link_to "献立表", menu_path
+    .container
+      .content
+        .row
+          .span11
+            = yield
+          .span3
+            %h3 今日は何の日？
+            %ul
+              %li ここに
+              %li いれたら
+              %li おもしろそう
+
+            %h3 リンク
+            %ul
+              %li= link_to "長野高専", "http://www.nagano-nct.ac.jp/"
+              %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
+    %footer.footer
+      .container
+        %p
+          (C) 2012 Hayato Okumoto. All rights reserved.
+
+        %p
+          Source code is on
+          = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
+        %p
+          Developed by
+          = link_to "@falcon_8823", "http://twitter.com/falcon_8823"
+
+        -#%p
+          Hosted by
+          = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"

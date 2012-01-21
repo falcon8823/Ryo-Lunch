@@ -1,15 +1,18 @@
-%p#notice= notice
+.page-header
+  %h1
+    = l @menu.date, format: :long
+    = " 【#{@menu.when}】"
+    のメニュー
 
-%p
-  %b Date:
-  = @menu.date
-%p
-  %b Time:
-  = @menu.time
-%p
-  %b Contents:
-  = @menu.contents
+.row
+  .span11
+    %label.label 内容
+    %p= @menu.contents
 
-= link_to 'Edit', edit_menu_path(@menu)
-\|
-= link_to 'Back', menus_path
+.row
+  .span11
+    .actions
+      = link_to '戻る', menus_path, class: 'btn'
+      = link_to '編集', edit_menu_path(@menu), class: 'btn info'
+      = link_to '削除', @menu, confirm: '削除してもよろしいですか？',
+        method: :delete, class: 'btn danger'

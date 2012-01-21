@@ -1,23 +1,17 @@
-%h1 Listing menus
+.page-header
+  %h1 献立表
 
-%table
-  %tr
-    %th Date
-    %th Time
-    %th Contents
-    %th
-    %th
-    %th
-
-  - @menus.each do |menu|
+= link_to '新しい献立', new_menu_path, class: 'btn primary'
+%table.zebra-striped
+  %thead
     %tr
-      %td= menu.date
-      %td= menu.time
-      %td= menu.contents
-      %td= link_to 'Show', menu
-      %td= link_to 'Edit', edit_menu_path(menu)
-      %td= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete
+      %th{width: 60}
+      %th{width: 120} 日付
+      %th 内容
+  %tbody
+    - @menus.each do |menu|
+      %tr
+        %td= link_to '見る', menu, class: 'btn info'
+        %td= "#{l(menu.date, format: :short)} 【#{menu.when}】"
+        %td= menu.contents
 
-%br
-
-= link_to 'New Menu', new_menu_path
