@@ -9,7 +9,7 @@ class Menu < ActiveRecord::Base
 
   validates :time,
     presence: true,
-    inclusion: {in: 1..3},
+    inclusion: {in: 0..2},
     numericality: true,
     uniqueness: {
       scope: :date,
