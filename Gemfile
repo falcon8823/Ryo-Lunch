@@ -36,3 +36,6 @@ gem 'jquery-rails', '2.0.0'
 
 gem 'haml', '3.1.4'
 
+group :development, :test do
+	gem 'rspec-rails', '2.8.1'
+end
