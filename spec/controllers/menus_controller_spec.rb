@@ -24,7 +24,7 @@ describe MenusController do
   # Menu. As you add validations to Menu, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {date: '2011-01-23', time: 1, contents: 'hogehoge'}
   end
   
   # This should return the minimal set of values that should be in the session
