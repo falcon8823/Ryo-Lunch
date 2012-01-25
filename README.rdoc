@@ -1,11 +1,6 @@
 = Ryo-Lunch
 寮食堂の献立配信サービス
 
-Authors:: Hayato Okumoto
-Version:: 0.1-dev 2012-01-21 okumoto
-Copyright:: Copyright (C) Hayato Okumoto, 2012. All rights reserved.
-License:: 2-clause BSD License
-
 == What's this?
 * これは寮食堂の献立配信サービス「Ryo-Lunch」です．
 
@@ -19,3 +14,14 @@ License:: 2-clause BSD License
  * [予定] 空メールによるユーザ登録機能
  * [予定] メール自動配信機能
 
+== Contributors
+* Hayato Okumoto
+
+== Version
+0.1-dev 2012-01-21 okumoto
+
+== License
+* 2-clause BSD License
+
+== Copyright
+Copyright (C) Hayato Okumoto, 2012. All rights reserved.

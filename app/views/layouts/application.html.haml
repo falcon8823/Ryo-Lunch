@@ -5,6 +5,14 @@
     = stylesheet_link_tag    "application", media: :all
     = javascript_include_tag "application"
     = csrf_meta_tags
+  %header
+    .topbar
+      .topbar-inner
+        .container
+          %h3= link_to "Ryo-Lunch", root_path
+          %ul.nav
+            %li= link_to "今日の献立", "#"
+            %li= link_to "献立表", menus_path
   %body
     -if notice
       .alert-message.info.hide
@@ -16,13 +24,6 @@
       .alert-message.danger.hide
         = danger
 
-    .topbar
-      .topbar-inner
-        .container
-          %h3= link_to "Ryo-Lunch", root_path
-          %ul.nav
-            %li= link_to "今日の献立", "#"
-            %li= link_to "献立表", menus_path
     .container
       .content
         .row
@@ -35,30 +36,26 @@
               %li いれたら
               %li おもしろそう
 
+    %footer.footer
+      .container
+        .row
+          .span8
             %h3 リンク
             %ul
               %li= link_to "長野高専", "http://www.nagano-nct.ac.jp/"
               %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
-    %footer.footer
-      .container
-        %p
-          (C) 2012 Hayato Okumoto. All rights reserved.
-
-        %p
-          Source code is on
-          = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
-        %p
-          Developed by
-          = link_to "@falcon_8823", "http://twitter.com/falcon_8823"
-
-        %p
-          Powered by
-          = link_to 'Ruby', 'http://www.ruby-lang.org/ja/'
-          on
-          = link_to 'Rails', 'http://rubyonrails.org/'
-          ,
-          = link_to 'Ubuntu Server',
-            'http://www.ubuntu.com/download/server/download'
-          and
-          = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"
-          \.
+          .span6.credit
+            %h3 Ryo-Lunch
+            %p 寮食堂の献立配信サービス
+            %p
+              Source code is on 
+              = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
+            %p
+              Powered by
+              = link_to 'Ruby', 'http://www.ruby-lang.org/ja/'
+              on
+              = link_to 'Rails', 'http://rubyonrails.org/'
+              and
+              = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"
+            %p
+              (C) 2012 Hayato Okumoto. All rights reserved.
