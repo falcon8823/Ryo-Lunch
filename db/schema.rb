@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20120203051611) do
 
   create_table "daily_menus", :force => true do |t|
     t.date     "date"
-    t.text     "morning"
+    t.text     "breakfast"
     t.text     "lunch"
     t.text     "dinner"
     t.datetime "created_at", :null => false
