@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @daily_menu.date
+%p
+  %b Morning:
+  = @daily_menu.morning
+%p
+  %b Lunch:
+  = @daily_menu.lunch
+%p
+  %b Dinner:
+  = @daily_menu.dinner
+
+= link_to 'Edit', edit_daily_menu_path(@daily_menu)
+\|
+= link_to 'Back', daily_menus_path

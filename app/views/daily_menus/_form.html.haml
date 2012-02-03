@@ -1,0 +1,22 @@
+= form_for @daily_menu do |f|
+  -if @daily_menu.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@daily_menu.errors.count, "error")} prohibited this daily_menu from being saved:"
+      %ul
+        - @daily_menu.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :date
+    = f.date_select :date
+  .field
+    = f.label :morning
+    = f.text_area :morning
+  .field
+    = f.label :lunch
+    = f.text_area :lunch
+  .field
+    = f.label :dinner
+    = f.text_area :dinner
+  .actions
+    = f.submit 'Save'
