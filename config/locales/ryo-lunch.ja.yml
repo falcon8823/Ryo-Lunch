@@ -11,3 +11,8 @@ ja:
         date: "日付"
         time: "時"
         contents: "内容"
+      daily_menu:
+        date: "日付"
+        breakfast: "朝食"
+        lunch: "昼食"
+        dinner: "夕食"
