@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "daily_menus/show" do
   before(:each) do
     @daily_menu = assign(:daily_menu, stub_model(DailyMenu,
-      :morning => "MyText",
+      :date => Date.today,
+      :breakfast => "MyText",
       :lunch => "MyText",
       :dinner => "MyText"
     ))

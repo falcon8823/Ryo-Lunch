@@ -1,28 +1,28 @@
+# encoding: utf-8
 require 'spec_helper'
 
 describe "daily_menus/index" do
   before(:each) do
     assign(:daily_menus, [
       stub_model(DailyMenu,
-        :morning => "MyText",
+        :date => Date.today,
+        :breakfast => "MyText",
         :lunch => "MyText",
         :dinner => "MyText"
       ),
       stub_model(DailyMenu,
-        :morning => "MyText",
+        :date => 1.day.from_now,
+        :breakfast => "MyText",
         :lunch => "MyText",
         :dinner => "MyText"
       )
     ])
   end
 
-  it "renders a list of daily_menus" do
+  it "登録された項目が表示されること" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+
+    assert_select "tr>td>h5", text: l(Date.today, format: :short), count: 1
+    assert_select "tr>td>h5", text: l(1.day.from_now, format: :short), count: 1
   end
 end
