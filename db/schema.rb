@@ -22,14 +22,4 @@ ActiveRecord::Schema.define(:version => 20120203051611) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "menus", :force => true do |t|
-    t.date     "date",       :null => false
-    t.integer  "time",       :null => false
-    t.text     "contents",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "menus", ["date", "time"], :name => "index_menus_on_date_and_time", :unique => true
-
 end
