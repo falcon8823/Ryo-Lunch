@@ -4,18 +4,28 @@
     のメニュー
 
 .row
-  .span11
-    %h2 【朝】
-    %p= @daily_menu.breakfast
-    %h2 【昼】
-    %p= @daily_menu.lunch
-    %h2 【夕】
-    %p= @daily_menu.dinner
+  .span5
+    %h2 【朝食】
+    %ul
+      - @daily_menu.breakfast.each_line do |i|
+        %li= i
+  .span5
+    %h2 【昼食】
+    %ul
+      - @daily_menu.lunch.each_line do |i|
+        %li= i
+  .span5
+    %h2 【夕食】
+    %ul
+      - @daily_menu.dinner.each_line do |i|
+        %li= i
 
 .row
-  .span11
+  .span16
     .actions
-      = link_to '戻る', daily_menus_path, class: 'btn'
       = link_to '編集', edit_daily_menu_path(@daily_menu), class: 'btn info'
       = link_to '削除', @daily_menu, confirm: '削除してもよろしいですか？',
         method: :delete, class: 'btn danger'
+.row
+  .span16
+    = link_to '献立表を見る', daily_menus_path, class: 'btn'
