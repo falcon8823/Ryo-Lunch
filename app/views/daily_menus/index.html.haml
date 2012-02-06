@@ -1,25 +1,9 @@
-%h1 Listing daily_menus
-
+.page-header
+  %h1 献立表
 %table
-  %tr
-    %th Date
-    %th Morning
-    %th Lunch
-    %th Dinner
-    %th
-    %th
-    %th
-
-  - @daily_menus.each do |daily_menu|
+  - @daily_menus.each_slice(7) do |row|
     %tr
-      %td= daily_menu.date
-      %td= daily_menu.morning
-      %td= daily_menu.lunch
-      %td= daily_menu.dinner
-      %td= link_to 'Show', daily_menu
-      %td= link_to 'Edit', edit_daily_menu_path(daily_menu)
-      %td= link_to 'Destroy', daily_menu, :confirm => 'Are you sure?', :method => :delete
+      - row.each do |day|
+        %td
+          %h5= link_to l(day.date, format: :short), day
 
-%br
-
-= link_to 'New Daily menu', new_daily_menu_path

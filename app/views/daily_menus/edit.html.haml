@@ -1,7 +1,10 @@
-%h1 Editing daily_menu
+.page-header
+  %h1
+    = l @daily_menu.date, format: :long
+    の献立の編集
 
 = render 'form'
 
-= link_to 'Show', @daily_menu
+= link_to "表示を見る", @daily_menu
 \|
-= link_to 'Back', daily_menus_path
+= link_to '献立表', daily_menus_path

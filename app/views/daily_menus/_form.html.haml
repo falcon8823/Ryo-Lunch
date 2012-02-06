@@ -7,16 +7,20 @@
           %li= msg
 
   .field
-    = f.label :date
-    = f.date_select :date
+    = f.label :date, class: :label
+    %p.input
+      = f.date_select :date, {}, class: :mini
   .field
-    = f.label :morning
-    = f.text_area :morning
+    = f.label :breakfast, class: :label
+    %p.input
+      = f.text_area :breakfast, rows: 8, cols: 30
   .field
-    = f.label :lunch
-    = f.text_area :lunch
+    = f.label :lunch, class: :label
+    %p.input
+      = f.text_area :lunch, rows: 8, cols: 30
   .field
-    = f.label :dinner
-    = f.text_area :dinner
+    = f.label :dinner, class: :label
+    %p.input
+      = f.text_area :dinner, rows: 8, cols: 30
   .actions
-    = f.submit 'Save'
+    = f.submit '保存', class: 'btn primary'
