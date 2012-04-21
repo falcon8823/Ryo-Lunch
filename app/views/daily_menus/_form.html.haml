@@ -1,26 +1,35 @@
 = form_for @daily_menu do |f|
-  -if @daily_menu.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@daily_menu.errors.count, "error")} prohibited this daily_menu from being saved:"
-      %ul
-        - @daily_menu.errors.full_messages.each do |msg|
-          %li= msg
-
-  .field
-    = f.label :date, class: :label
-    %p.input
-      = f.date_select :date, {}, class: :mini
-  .field
-    = f.label :breakfast, class: :label
-    %p.input
-      = f.text_area :breakfast, rows: 8, cols: 30
-  .field
-    = f.label :lunch, class: :label
-    %p.input
-      = f.text_area :lunch, rows: 8, cols: 30
-  .field
-    = f.label :dinner, class: :label
-    %p.input
-      = f.text_area :dinner, rows: 8, cols: 30
-  .actions
-    = f.submit '保存', class: 'btn primary'
+  .row
+    .span4
+      -if @daily_menu.errors.any?
+        #error_explanation
+          %h2= "#{pluralize(@daily_menu.errors.count, "error")} prohibited this daily_menu from being saved:"
+          %ul
+            - @daily_menu.errors.full_messages.each do |msg|
+              %li= msg
+  .row
+    .span4
+      .field
+        = f.label :date, class: :label
+        %p.input
+          = f.date_select :date, {}, class: 'input-mini'
+  .row
+    .span4
+      .field
+        = f.label :breakfast, class: :label
+        %p.input
+          = f.text_area :breakfast, rows: 8, cols: 30
+    .span4
+      .field
+        = f.label :lunch, class: :label
+        %p.input
+          = f.text_area :lunch, rows: 8, cols: 30
+    .span4
+      .field
+        = f.label :dinner, class: :label
+        %p.input
+          = f.text_area :dinner, rows: 8, cols: 30
+  .row
+    .span12
+      .form-actions
+        = f.submit '保存する', class: 'btn btn-primary'

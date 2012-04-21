@@ -1,57 +1,62 @@
 !!!
 %html
   %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
     %title Ryo-Lunch
-    = stylesheet_link_tag    "application", media: :all
-    = javascript_include_tag "application"
+    = stylesheet_link_tag "application", media: :all
     = csrf_meta_tags
-  %header
-    .topbar
-      .topbar-inner
-        .container
-          %h3= link_to "Ryo-Lunch", root_path
-          %ul.nav
-            %li= link_to "今日の献立", "#"
-            %li= link_to "献立表", daily_menus_path
   %body
+    %header
+      .navbar
+        .navbar-inner
+          .container
+            %a.btn.btn-navbar{data: {toggle: :collapse, target: '.nav-collapse'}}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{href: root_path} Ryo-Lunch
+            .nav-collapse
+              %ul.nav
+                %li= link_to "今日の献立", "#"
+                %li= link_to "献立表", daily_menus_path
     -if notice
-      .alert-message.info.hide
-        = notice
+      .alert-message.alert-info.hide
+        %h4= notice
     -if alert
-      .alert-message.warning.hide
-        = alert
+      .alert-message.alert-warning.hide
+        %h4= alert
     -if danger = flash[:danger]
-      .alert-message.danger.hide
-        = danger
+      .alert-message.alert-danger.hide
+        %h4= danger
 
     .container
-      .content
-        .row
-          .span16
-            = yield
+      .contents
+        = yield
 
-    %footer.footer
-      .container
+    %footer
+      .container.well
         .row
-          .span4
-            %h3 リンク
-            %ul
-              %li= link_to "長野高専", "http://www.nagano-nct.ac.jp/"
-              %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
-          .span7
-            %p
-          .span5.credit
-            %h3 Ryo-Lunch
+          .span4.credit
+            %h2 Ryo-Lunch
             %p 寮食堂の献立配信サービス
             %p
               Source code is on 
               = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
-            %p
+              %br
               Powered by
               = link_to 'Ruby', 'http://www.ruby-lang.org/ja/'
               on
               = link_to 'Rails', 'http://rubyonrails.org/'
               and
               = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"
-            %p
+              %br
               (C) 2012 Hayato Okumoto. All rights reserved.
+          .span4
+            %h3 リンク
+            %ul
+              %li= link_to "長野高専", "http://www.nagano-nct.ac.jp/"
+              %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
+          .span4
+            %p 
+    = javascript_include_tag "application"

@@ -1,31 +1,37 @@
-.page-header
-  %h1
-    = l @daily_menu.date, format: :long
-    のメニュー
+.row
+  .span12
+    .page-header
+      %h1
+        = l @daily_menu.date, format: :long
+        のメニュー
 
 .row
-  .span5
-    %h2 【朝食】
-    %ul
-      - @daily_menu.breakfast.each_line do |i|
-        %li= i
-  .span5
-    %h2 【昼食】
-    %ul
-      - @daily_menu.lunch.each_line do |i|
-        %li= i
-  .span5
-    %h2 【夕食】
-    %ul
-      - @daily_menu.dinner.each_line do |i|
-        %li= i
+  .span4
+    .well
+      %h2 【朝食】
+      %hr
+      %ul
+        - @daily_menu.breakfast.each_line do |i|
+          %li= i
+  .span4
+    .well
+      %h2 【昼食】
+      %hr
+      %ul
+        - @daily_menu.lunch.each_line do |i|
+          %li= i
+  .span4
+    .well
+      %h2 【夕食】
+      %hr
+      %ul
+        - @daily_menu.dinner.each_line do |i|
+          %li= i
 
 .row
-  .span16
-    .actions
-      = link_to '編集', edit_daily_menu_path(@daily_menu), class: 'btn info'
+  .span12
+    .form-actions
+      = link_to '献立表を見る', daily_menus_path, class: 'btn'
+      = link_to '編集', edit_daily_menu_path(@daily_menu), class: 'btn btn-info'
       = link_to '削除', @daily_menu, confirm: '削除してもよろしいですか？',
-        method: :delete, class: 'btn danger'
-.row
-  .span16
-    = link_to '献立表を見る', daily_menus_path, class: 'btn'
+        method: :delete, class: 'btn btn-danger'
