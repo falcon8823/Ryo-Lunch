@@ -1,0 +1,27 @@
+おはようございます。
+<%= l Date.today, format: :short %>のRyo-Lunchです。
+
+- Lunch -
+<%= @today.lunch %>
+
+- Dinner -
+<%= @today.dinner %>
+
+- Breakfast @ <%= l Date.tomorrow, format: :very_short %> -
+<% if @tomorrow %>
+<%= @tomorrow.breakfast %>
+<% else %>
+献立の配信はありません。
+<% end %>
+
+--
+配信停止を希望する場合は、お手数ですが以下の手順でお願いします。
+1. 以下のメールアドレスに『空メール』を送信
+  <%= APP_CONFIG['sender-mail'] %>
+2. 『配信停止URL』のついたメールが届くので、URLにアクセス。
+3. 『配信停止完了メール』が届いたら完了です。
+※再度配信を希望する場合は、上のアドレスに空メールを送信してください。
+
+Ryo-Lunchについての問い合わせ先は
+  <%= APP_CONFIG['support-mail'] %>
+になります。

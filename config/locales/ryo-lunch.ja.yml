@@ -2,6 +2,7 @@ ja:
   date:
     formats:
       short: ! '%m月%d日（%a）'
+      very_short: ! '%m/%d'
   activerecord:
     models:
       menu: "献立表"
