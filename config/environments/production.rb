@@ -70,4 +70,7 @@ RyoLunch::Application.configure do
   config.action_mailer.smtp_seddings = {
     enable_starttls_auto: false
   }
+  config.action_mailer.default_url_options = {
+    host: 'ryo-lunch.jo-ken.info'
+  }
 end
