@@ -34,4 +34,10 @@ RyoLunch::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.action_mailer.delivery_method = :file
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.file_settings = {
+    location: "#{Rails.root}/tmp/test_mail"
+  }
 end
