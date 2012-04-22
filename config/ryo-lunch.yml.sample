@@ -1,0 +1,10 @@
+development:
+  sender-mail: sample@sample.com
+  support-mail: sample-support@sample.com
+production:
+  sender-mail: sample@sample.com
+  support-mail: sample-support@sample.com
+test:
+  sender-mail: sample@sample.com
+  support-mail: sample-support@sample.com
+
