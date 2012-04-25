@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+app_home=/home/hayato/rails/Ryo-Lunch
+ruby_home=/home/hayato/.rvm/gems/ruby-1.9.3-p0@bundler
+bundle_path=$ruby_home/bin/bundle
+
+export GEM_HOME=$ruby_home
+export PATH=/home/hayato/.rvm/bin:$ruby_home/bin:$PATH
+
+cd $app_home
+rvm 1.9.3@bundler do bundle exec script/rails runner 'RegistrationMailer.receive(STDIN.read)'
