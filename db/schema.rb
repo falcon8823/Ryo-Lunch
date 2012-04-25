@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120207163043) do
+ActiveRecord::Schema.define(:version => 20120425152432) do
 
   create_table "daily_menus", :force => true do |t|
     t.date     "date"
@@ -24,10 +24,14 @@ ActiveRecord::Schema.define(:version => 20120207163043) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.boolean  "active"
+    t.string   "activation_code"
+    t.datetime "activation_start"
   end
 
+  add_index "users", ["activation_code"], :name => "index_users_on_activation_code", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
