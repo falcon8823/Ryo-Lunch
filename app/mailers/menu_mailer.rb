@@ -15,7 +15,7 @@ class MenuMailer < ActionMailer::Base
     bcc = User.active.map{ |u| u.email }
     
     mail to: APP_CONFIG['support-mail'],
-      subject: "#{l(Date.today, format: :short)}のRyo-Lunch",
+      subject: "[Ryo-Lunch]#{l(Date.today, format: :short)}の献立",
       bcc: bcc
   end
 end
