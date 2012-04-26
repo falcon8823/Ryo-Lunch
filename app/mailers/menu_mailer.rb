@@ -12,7 +12,7 @@ class MenuMailer < ActionMailer::Base
     end
 
     @tomorrow = DailyMenu.tomorrow
-    bcc = User.all.map{ |u| u.email }
+    bcc = User.active.map{ |u| u.email }
     
     mail to: APP_CONFIG['support-mail'],
       subject: "#{l(Date.today, format: :short)}のRyo-Lunch",
