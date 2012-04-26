@@ -72,35 +72,57 @@ describe User do
   end
 
   describe 'を取得するとき' do
-    it '存在する id の場合，1件取得できる．' do
-      pending
+    before :all do
+      @active = [
+        {email: "hoge@hoge.com", active: true},
+        {email: "hoge1@hoge.com", active: true},
+        {email: "hoge2@hoge.com", active: true},
+        {email: "hoge3@hoge.com", active: true},
+        {email: "hoge4@hoge.com", active: true}
+      ]
+      @inactive = [
+        {email: "huga@hoge.com", active: false},
+        {email: "huga1@hoge.com", active: false},
+        {email: "huga2@hoge.com", active: false}
+      ]
+
+      (@active + @inactive).each do |l|
+        User.create! l
+      end
     end
 
-    it '存在しない id の場合，取得できない．' do
-      pending
+    it 'activeなユーザのみ取得できる' do
+      User.active.should have(@active.count).items
+      @active.each do |l|
+        User.active.find_by_email(l[:email]).should_not be_nil
+      end
+      @inactive.each do |l|
+        User.active.find_by_email(l[:email]).should be_nil
+      end
     end
 
-    it '存在する email の場合，1件取得できる．' do
-      pending
-    end
-
-    it '存在しない email の場合，取得できない．' do
-      pending
+    it 'inactiveなユーザのみ取得できる' do
+      User.inactive.should have(@inactive.count).items
+      @inactive.each do |l|
+        User.inactive.find_by_email(l[:email]).should_not be_nil
+      end
+      @active.each do |l|
+        User.inactive.find_by_email(l[:email]).should be_nil
+      end
     end
   end
 
   describe 'を削除するとき' do
-    it 'id が存在する場合，削除できる．' do
-      pending
-      # TODO: 件数チェック
+    before :each do
+      @email = "hoe@hoe.com"
+      @user = User.create! email: @email
     end
 
-  end
-
-
-  describe 'をするとき' do
-    it '場合，．' do
-      pending
+    it 'email が存在する場合，削除できる．' do
+      user = User.find_by_email @email
+      user.destroy
+      
+      User.find_by_email(@email).should be_nil
     end
   end
 
