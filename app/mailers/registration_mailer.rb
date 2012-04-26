@@ -6,6 +6,20 @@ class RegistrationMailer < ActionMailer::Base
     reply_to: APP_CONFIG['support-mail'],
     errors_to: APP_CONFIG['support-mail']
 
+  # 登録を完了させるURLを送るメール
+  def activation_mail(user)
+    @user = user
+    mail to: user.email,
+      subject: "[Ryo-Lunch]登録URL"
+  end
+
+  # 解除を完了させるURLを送るメール
+  def stopping_mail(user)
+    @user = user
+    mail to: user.email,
+      subject: "[Ryo-Lunch]登録解除URL"
+  end
+
   def receive(mail)
     email = mail.from.first
     user = User.find_by_email(email)
@@ -20,11 +34,11 @@ class RegistrationMailer < ActionMailer::Base
       if user.active
         # 既に登録済みの場合
         # 解除処理へ
-        stopping_mail(user)
+        RegistrationMailer.stopping_mail(user).deliver
       else
         # 登録が完了していない場合
         # URLを再発行しメールを送信
-        activation_mail(user)
+        RegistrationMailer.activation_mail(user).deliver
       end
     else
       # ユーザが存在しない場合
@@ -36,22 +50,9 @@ class RegistrationMailer < ActionMailer::Base
         activation_code: SecureRandom.hex(16).to_s
       )
 
-      activation_mail(user)
+      RegistrationMailer.activation_mail(user).deliver
     end
   end
   
-  # 登録を完了させるURLを送るメール
-  def activation_mail(user)
-
-    mail to: user.email,
-      subject: "[Ryo-Lunch]登録URL"
-  end
-
-  # 解除を完了させるURLを送るメール
-  def stopping_mail(user)
-
-    mail to: user.email,
-      subject: "[Ryo-Lunch]登録解除URL"
-  end
 
 end
