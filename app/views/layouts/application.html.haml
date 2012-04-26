@@ -18,7 +18,7 @@
             %a.brand{href: root_path} Ryo-Lunch
             .nav-collapse
               %ul.nav
-                %li= link_to "今日の献立", "#"
+                %li= link_to "今日の献立", DailyMenu.today
                 %li= link_to "献立表", daily_menus_path
     -if notice
       .alert-message.alert-info.hide
@@ -38,7 +38,7 @@
       .container.well
         .row
           .span4.credit
-            %h2 Ryo-Lunch
+            %h2= link_to "Ryo-Lunch", root_path
             %p 寮食堂の献立配信サービス
             %p
               Source code is on 
@@ -46,17 +46,22 @@
               %br
               Powered by
               = link_to 'Ruby', 'http://www.ruby-lang.org/ja/'
-              on
-              = link_to 'Rails', 'http://rubyonrails.org/'
-              and
-              = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"
+              on&nbsp;
+              -#= link_to 'Rails', #://rubyonrails.org/'
+              %a{href: 'http://rubyonrails.org/'}> Rails
+              ,
               %br
-              (C) 2012 Hayato Okumoto. All rights reserved.
+              = link_to "さくらのVPS", "http://vps.sakura.ad.jp/"
+              and
+              = link_to "情報技術研究部", "http://jo-ken.info/"
+              %br
+              (C) 2012 長野高専学生寮 食堂委員会.
           .span4
             %h3 リンク
             %ul
               %li= link_to "長野高専", "http://www.nagano-nct.ac.jp/"
               %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
+              %li= link_to "情報技術研究部", "http://jo-ken.info/"
           .span4
             %p 
     = javascript_include_tag "application"

@@ -14,9 +14,6 @@
  * [予定] 空メールによるユーザ登録機能
  * [予定] メール自動配信機能
 
-== Contributors
-* Hayato Okumoto
-
 == Version
 0.1-dev 2012-01-21 okumoto
 
@@ -24,4 +21,4 @@
 * 2-clause BSD License
 
 == Copyright
-Copyright (C) Hayato Okumoto, 2012. All rights reserved.
+(C) NaganoNCT ITRC, 2012. All rights reserved.
