@@ -12,12 +12,12 @@ class RegistrationController < ApplicationController
           user.activation_code = nil
           user.save!
 
-          render text: 'Ryo-Lunchの配信登録が完了しました。'
+          render text: 'Ryo-Lunchの配信登録が完了しました。', layout: true
       else
-        render text: '指定されたURLは無効か期限切れです。'
+        render text: '指定されたURLは無効か期限切れです。', layout: true
       end
     else
-      render text: '指定されたURLは無効です。'
+      render text: '指定されたURLは無効です。', layout: true
     end
   end
   
@@ -29,12 +29,12 @@ class RegistrationController < ApplicationController
       if user && user.activation_start > 2.hours.ago
           # 解除処理
           user.destroy
-          render text: 'Ryo-Lunchの配信停止が完了しました。'
+          render text: 'Ryo-Lunchの配信停止が完了しました。', layout: true
       else
-        render text: '指定されたURLは無効か期限切れです。'
+        render text: '指定されたURLは無効か期限切れです。', layout: true
       end
     else
-      render text: '指定されたURLは無効です。'
+      render text: '指定されたURLは無効です。', layout: true
     end
 
   end

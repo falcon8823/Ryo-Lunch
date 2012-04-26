@@ -1,7 +1,7 @@
 # coding: utf-8
 
 require 'securerandom'
-class RegistrationMailer < ActionMailer::Base
+class RegistrationMailer < Jpmobile::Mailer::Base
   default from: "Ryo-Lunch <#{APP_CONFIG['sender-mail']}>",
     reply_to: APP_CONFIG['support-mail'],
     errors_to: APP_CONFIG['support-mail']
