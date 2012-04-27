@@ -8,21 +8,21 @@
 .row
   .span4
     .well
-      %h2 【朝食】
+      %h2 Breakfast
       %hr
       %ul
         - @daily_menu.breakfast.each_line do |i|
           %li= i
   .span4
     .well
-      %h2 【昼食】
+      %h2 Lunch
       %hr
       %ul
         - @daily_menu.lunch.each_line do |i|
           %li= i
   .span4
     .well
-      %h2 【夕食】
+      %h2 Dinner
       %hr
       %ul
         - @daily_menu.dinner.each_line do |i|
@@ -30,8 +30,4 @@
 
 .row
   .span12
-    .form-actions
-      = link_to '献立表を見る', daily_menus_path, class: 'btn'
-      = link_to '編集', edit_daily_menu_path(@daily_menu), class: 'btn btn-info'
-      = link_to '削除', @daily_menu, confirm: '削除してもよろしいですか？',
-        method: :delete, class: 'btn btn-danger'
+    = link_to '献立表に戻る', daily_menus_path, class: 'btn btn-primary'
