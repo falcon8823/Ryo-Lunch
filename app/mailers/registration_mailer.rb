@@ -22,6 +22,9 @@ class RegistrationMailer < ActionMailer::Base
 
   def receive(mail)
     email = mail.from.first
+    if email =~ /MAILER-DAEMON/
+      raise
+    end
     user = User.find_by_email(email)
 
     if user

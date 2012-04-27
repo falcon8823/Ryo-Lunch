@@ -5,4 +5,4 @@ export rvm_path=/home/falcon/.rvm
 
 cd $app_home
 [[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm"
-rvm 1.9.3@bundler do bundle exec script/rails runner 'RegistrationMailer.receive(STDIN.read)' -e production
+rvm 1.9.3@bundler do bundle exec script/rails runner 'MenuMailer.today.deliver' -e production
