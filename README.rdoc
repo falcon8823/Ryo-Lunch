@@ -18,7 +18,8 @@
 0.1-dev 2012-01-21 okumoto
 
 == License
-* 2-clause BSD License
+* MIT License
+See also http://www.opensource.org/licenses/mit-license.php
 
 == Copyright
 (C) NaganoNCT ITRC, 2012. All rights reserved.
