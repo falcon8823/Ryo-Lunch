@@ -1,10 +1,22 @@
 development:
   sender-mail: sample@sample.com
   support-mail: sample-support@sample.com
+  t_consumer_key:
+  t_consumer_secret:
+  t_access_token:
+  t_access_token_secret:
 production:
   sender-mail: sample@sample.com
   support-mail: sample-support@sample.com
+  t_consumer_key:
+  t_consumer_secret:
+  t_access_token:
+  t_access_token_secret:
 test:
   sender-mail: sample@sample.com
   support-mail: sample-support@sample.com
+  t_consumer_key:
+  t_consumer_secret:
+  t_access_token:
+  t_access_token_secret:
 

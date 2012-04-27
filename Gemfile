@@ -40,3 +40,5 @@ gem 'rails-i18n', '0.3.0'
 group :development, :test do
 	gem 'rspec-rails', '2.8.1'
 end
+
+gem 'twitter', '2.2.5'
