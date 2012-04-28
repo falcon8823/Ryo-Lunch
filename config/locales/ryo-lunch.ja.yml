@@ -5,15 +5,17 @@ ja:
       very_short: ! '%m/%d'
   activerecord:
     models:
-      menu: "献立表"
+      daily_menu: "献立表"
+      user: "利用者"
     
     attributes:
-      menu:
-        date: "日付"
-        time: "時"
-        contents: "内容"
       daily_menu:
         date: "日付"
         breakfast: "朝食"
         lunch: "昼食"
         dinner: "夕食"
+      user:
+        email: "メールアドレス"
+        active: "有効"
+        activation_code: "認証コード"
+        activation_start: "認証期間開始時刻"

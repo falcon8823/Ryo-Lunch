@@ -3,7 +3,7 @@ RyoLunch::Application.routes.draw do
 
   get "registration/stopping"
 
-  resources :daily_menus
+  resources :daily_menus, only: [:index, :show]
 
   root to: 'Welcome#top'
 

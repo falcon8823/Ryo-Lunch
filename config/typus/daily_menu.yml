@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+DailyMenu:
+  fields:
+    default: id, date, breakfast, lunch, dinner
+    form: date, breakfast, lunch, dinner
+  relationships: 
+  application: Application
