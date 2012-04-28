@@ -1,0 +1,55 @@
+<center>
+<h2>Ryo-Lunch</h2>
+<p>寮食堂の献立をお届けします。</p>
+</center>
+<hr>
+
+<center>
+今日(<%= l Date.today, format: :very_short %>)の献立
+
+<h3>Breakfast</h3>
+</center>
+<ul>
+<% @today.breakfast.each_line do |i| %>
+  <li><%= i %></li>
+<% end %>
+</ul>
+
+<center>
+<h3>Lunch</h3>
+</center>
+<ul>
+<% @today.lunch.each_line do |i| %>
+  <li><%= i %></li>
+<% end %>
+</ul>
+
+<center>
+<h3>Dinner</h3>
+</center>
+<ul>
+<% @today.dinner.each_line do |i| %>
+  <li><%= i %></li>
+<% end %>
+</ul>
+
+<hr>
+
+<center>
+  <h3>メールマガジン</h3>
+  <p>毎朝献立をあなたのメールに配信します！</p>
+  <a href="mailto:<%= APP_CONFIG['sender-mail'] %>"><%= APP_CONFIG['sender-mail'] %></a>
+  <p>
+  このメールアドレスに空メールを送信すると登録できます！
+  <br>
+  ※配信停止を希望する場合も、このメールアドレスに空メールを送信してください。</p>
+</center>
+
+<hr>
+
+<h4>Ryo-Lunch</h4>
+<p>
+長野高専学生寮 食堂委員会
+<br>
+Powered by 情報技術研究部
+</p>
