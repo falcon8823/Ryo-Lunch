@@ -1,5 +1,5 @@
 # coding: utf-8
-class MenuMailer < Jpmobile::Mailer::Base
+class MenuMailer < ActionMailer::Base
   default from: "Ryo-Lunch <#{APP_CONFIG['sender-mail']}>",
     reply_to: APP_CONFIG['support-mail'],
     errors_to: APP_CONFIG['support-mail']
