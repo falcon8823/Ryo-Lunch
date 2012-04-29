@@ -1,3 +1,6 @@
 = render partial: 'daily_menus/menu', 
   locals: {menu: @daily_menu, 
   date_str: l(@daily_menu.date, format: :short)}
+
+= link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+= link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}

@@ -11,15 +11,22 @@
       %ul
         - menu.breakfast.each_line do |i|
           %li= i
+        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
     %li
       昼食
       %ul
         - menu.lunch.each_line do |i|
           %li= i
+        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
     %li
       夕食
       %ul
         - menu.dinner.each_line do |i|
           %li= i
+        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
 - else
   %h3 献立データが登録されていません。
+

@@ -3,3 +3,5 @@
   - @menus_from_now.each do |m|
     %li= link_to l(m.date, format: :short), m
 
+= link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+= link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
