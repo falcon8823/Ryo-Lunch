@@ -4,3 +4,9 @@
 
 %ul{data: {role: :listview, inset: :true}}
   %li= link_to "献立表", daily_menus_path
+
+%h3 Ryo-Lunch配信サービスについて
+%p
+  毎朝その日の献立をメールでお届けします。
+= mail_to APP_CONFIG['sender-mail'], '登録する（空メールを送信）',
+  encode: :hex, data:{role: 'button'}

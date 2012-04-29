@@ -15,6 +15,11 @@
         = yield
       %div{data: {role: :footer}}
         %p
+          Ryo-Lunchについてのお問い合わせは
+          = mail_to APP_CONFIG['support-mail'],
+            'こちら', encode: :hex
+          から
+        %p
           (C) 2012 長野高専 寮生会 食堂委員会
           %br
           Powered by
