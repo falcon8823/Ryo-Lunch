@@ -8,21 +8,21 @@
 .row
   .span4
     .well
-      %h2 Breakfast
+      %h2 朝食
       %hr
       %ul
         - @daily_menu.breakfast.each_line do |i|
           %li= i
   .span4
     .well
-      %h2 Lunch
+      %h2 昼食
       %hr
       %ul
         - @daily_menu.lunch.each_line do |i|
           %li= i
   .span4
     .well
-      %h2 Dinner
+      %h2 夕食
       %hr
       %ul
         - @daily_menu.dinner.each_line do |i|
