@@ -2,9 +2,7 @@
   .span12
     .page-header
       %h1 献立表
-    %table
-      - @daily_menus.each_slice(7) do |row|
-        %tr
-          - row.each do |day|
-            %td
-              %h5= link_to l(day.date, format: :short), day
+      %ul
+        - @daily_menus.each do |m|
+          %li
+            %h5= link_to l(m.date, format: :short), m
