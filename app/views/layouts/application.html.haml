@@ -41,6 +41,12 @@
             %h2= link_to "Ryo-Lunch", root_path
             %p 寮食堂の献立配信サービス
             %p
+              Ryo-Lunchについてのお問い合わせは
+              = mail_to APP_CONFIG['support-mail'], 'こちら',
+                encode: :javascript
+              から
+
+            %p
               Source code is on 
               = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
               %br
