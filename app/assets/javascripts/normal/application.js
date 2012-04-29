@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require normal/bootstrap
 //= require_tree .
 
 $(document).ready(function() {

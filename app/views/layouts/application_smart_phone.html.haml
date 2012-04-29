@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+    %title
+      = @title ? "#{@title} | Ryo-Lunch" : "Ryo-Lunch"
+    = stylesheet_link_tag "smart-phone/application", media: :all
+    = csrf_meta_tags
+  %body
+    %div{data: {role: :page}}
+      %div{data: {role: :header}}
+        %h2 Ryo-Lunch
+      %div{data: {role: :content}}
+        = yield
+      %div{data: {role: :footer}}
+        %p
+          (C) 2012 長野高専 寮生会 食堂委員会
+          %br
+          Powered by
+          = link_to "情報技術研究部", "http://jo-ken.info"
+        %p
+          Source code is on
+          =link_to "Github", "http://github.com/falcon8823/Ryo-Lunch"
+    = javascript_include_tag "smart-phone/application"

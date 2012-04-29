@@ -4,7 +4,7 @@
     %meta{charset: 'utf-8'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
     %title Ryo-Lunch
-    = stylesheet_link_tag "application", media: :all
+    = stylesheet_link_tag "normal/application", media: :all
     = csrf_meta_tags
   %body
     %header
@@ -64,4 +64,4 @@
               %li= link_to "情報技術研究部", "http://jo-ken.info/"
           .span4
             %p 
-    = javascript_include_tag "application"
+    = javascript_include_tag "normal/application"
