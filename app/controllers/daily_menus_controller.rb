@@ -3,6 +3,7 @@ class DailyMenusController < ApplicationController
   # GET /daily_menus.json
   def index
     @daily_menus = DailyMenu.all
+    @menus_from_now = DailyMenu.from_now
 
     respond_to do |format|
       format.html # index.html.erb

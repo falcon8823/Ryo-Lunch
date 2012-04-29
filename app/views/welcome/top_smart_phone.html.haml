@@ -1,0 +1,6 @@
+= render partial: 'daily_menus/menu', 
+  locals: {menu: @today, date_str: "今日(#{l(Date.today, format: :very_short)})"}
+
+
+%ul{data: {role: :listview, inset: :true}}
+  %li= link_to "献立表", daily_menus_path

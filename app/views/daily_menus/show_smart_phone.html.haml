@@ -1,0 +1,3 @@
+= render partial: 'daily_menus/menu', 
+  locals: {menu: @daily_menu, 
+  date_str: l(@daily_menu.date, format: :short)}

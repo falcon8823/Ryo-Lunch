@@ -1,0 +1,5 @@
+%ul{data: {role: :listview, inset: :true}}
+  %li{data: {role: 'list-divider'}} 献立表
+  - @menus_from_now.each do |m|
+    %li= link_to l(m.date, format: :short), m
+

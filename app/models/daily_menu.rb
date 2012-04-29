@@ -1,6 +1,7 @@
 class DailyMenu < ActiveRecord::Base
   # Scope
-  default_scope order: 'daily_menus.date ASC'
+  default_scope order: 'daily_menus.date DESC'
+  scope :from_now, where('date >= ?', Date.today)
 
   # Validates
   validates :date, uniqueness: :date
