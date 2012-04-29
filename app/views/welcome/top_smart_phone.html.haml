@@ -1,3 +1,14 @@
+%div{data:{role: 'collapsible-set'}}
+  %div{data:{role: 'collapsible'}}
+    %h3 Ryo-Lunchがリニューアル！
+    %p
+      Ryo-Lunchが情報技術研究部によってリニューアルされました！
+      %br
+      以前は食堂委員長が毎朝手動で送信していましたが、
+      これからはすべて自動で配信されるようになります。
+      %br
+      また、メールだけでなく様々な形態でRyo-Lunchコンテンツの提供をしていきます！
+
 = render partial: 'daily_menus/menu', 
   locals: {menu: @today, date_str: "今日(#{l(Date.today, format: :very_short)})"}
 
@@ -5,8 +16,63 @@
 %ul{data: {role: :listview, inset: :true}}
   %li= link_to "献立表", daily_menus_path
 
-%h3 Ryo-Lunch配信サービスについて
-%p
-  毎朝その日の献立をメールでお届けします。
-= mail_to APP_CONFIG['sender-mail'], '登録する（空メールを送信）',
-  encode: :hex, data:{role: 'button'}
+
+%ul{data: {role: :listview, inset: :true, theme: :b}}
+  %li
+    Ryo-Lunch配信サービス
+    %ul{data: {role: :listview, theme: :c}}
+      %li
+        メール配信以外にTwitterとWebを用意しました！
+      %li
+        %h3 Ryo-Lunch Mail
+        %p 毎朝メールでお届け！
+        %ul{data: {role: :listview}}
+          %li
+            これまでのシステムと同様に，
+            献立を毎朝メールにてお届けします。
+          %li
+            毎朝8時頃にその日の昼食，夕食，次の日の朝食の献立をお届けします。
+          %li
+            %b 毎朝献立が気になっちゃうあなたにオススメ！
+          %li ※利用には登録が必要です（無料）
+          = mail_to APP_CONFIG['sender-mail'], '登録する（空メールを送信）',
+            encode: :hex, data:{role: 'button', theme: :b}
+          = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+          = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
+
+      %li
+        %h3 Ryo-Lunch Twitter Bot
+        %p 食事前にTwitterでチェック！
+        %ul{data: {role: :listview}}
+          %li
+            寮の献立をTwitterで配信！
+            朝，昼，夕それぞれの時間帯につぶやきます。
+          %li
+            寮食堂の前で並んでいるときにふとタイムラインを見れば、
+            ちょうど良くRyo-Lunchが今日の献立を教えてくれます。
+          %li
+            %b Twitterをよく使うあなたにオススメ！
+          = link_to '＠RyoLunchをフォロー', 'http://mobile.twitter.com/RyoLunch',
+            data:{role: 'button', theme: :b}
+          = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+          = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
+
+      %li
+        %h3 Ryo-Lunch Web
+        %p どんな時でも献立をチェック！
+        %ul{data: {role: :listview}}
+          %li
+            今、ちょうどあなたが見ているこのサイトの事です。
+          %li
+            PC，スマートフォン，フィーチャーフォンなどで閲覧することができます。
+            %br
+            それぞれの端末に最適化した表示で提供します。
+          %li
+            %b Ryo-Lunchをたまにチェックしたいあなたにオススメ！
+          = link_to 'http://ryo-lunch.jo-ken.info/', 'http://ryo-lunch.jo-ken.info/',
+            data:{role: 'button', theme: :b}
+          = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+          = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
+      = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
+      = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
+
