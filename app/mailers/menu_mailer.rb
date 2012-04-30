@@ -20,31 +20,34 @@ class MenuMailer < ActionMailer::Base
   end
 
   def t_today_breakfast
-    menu = DailyMenu.today.breakfast
+    menu = DailyMenu.today
     raise if menu.nil?
+    menu_str = menu.breakfast
 
-    tweet menu, Date.today, "朝食"
+    tweet menu_str, Date.today, "朝食", menu
   end
 
   def t_today_lunch
-    menu = DailyMenu.today.lunch
+    menu = DailyMenu.today
     raise if menu.nil?
+    menu_str = menu.lunch
 
-    tweet menu, Date.today, "昼食"
+    tweet menu_str, Date.today, "昼食", menu
   end
 
   def t_today_dinner
-    menu = DailyMenu.today.dinner
+    menu = DailyMenu.today
     raise if menu.nil?
+    menu_str = menu.dinner
 
-    tweet menu, Date.today, "夕食"
+    tweet menu_str, Date.today, "夕食", menu
   end
 
   private
 
-  def tweet(menu, date, time)
-    date = l(date, format: :short)
-    text = "[Ryo-Lunch] #{date}の#{time}：\n#{menu} #ryo_lunch"
+  def tweet(menu_str, date, time, menu)
+    date = l(date, format: :very_short)
+    text = "#{date}の#{time}:\n#{menu_str}\n#{daily_menu_url(menu)}\n#ryo_lunch"
 
     Twitter.update text
   end
