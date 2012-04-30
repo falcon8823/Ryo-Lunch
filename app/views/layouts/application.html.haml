@@ -15,7 +15,8 @@
               %span.icon-bar
               %span.icon-bar
               %span.icon-bar
-            %a.brand{href: root_path} Ryo-Lunch
+            %a.brand{href: root_path}
+              = image_tag 'n_logo.png', width: '100px'
             .nav-collapse
               %ul.nav
                 %li= link_to "今日の献立", DailyMenu.today
