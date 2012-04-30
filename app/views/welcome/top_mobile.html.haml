@@ -1,0 +1,70 @@
+%font{size: 3, color: '#800000'}
+  %center
+    = image_tag 'm_logo.gif', width: '150px'
+  %marquee{bgcolor: '#cccc00'}
+    情報技術研究部によってRyo-Lunchがリニューアルされました！
+  %hr
+  %center
+    %font{color: '#ff0000', size: 4}
+      %b 今日のメニュー
+  -if @today
+    ■
+    %b 朝食
+    %ul
+      - @today.breakfast.each_line do |i|
+        %li= i
+
+    ■
+    %b 昼食
+    %ul
+      - @today.lunch.each_line do |i|
+        %li= i
+
+    ■
+    %b 夕食
+    %ul
+      - @today.dinner.each_line do |i|
+        %li= i
+  - else
+    %b 今日の献立配信はありません。
+  %hr
+  
+  %center
+    %font{color: '#ff0000', size: 4}
+      %b Ryo-Lunch配信サービス
+  %h3 ■Ryo-Lunch Mail
+  %center
+    %font{size: 2}
+      %p
+        これまでのシステムと同様に，
+        献立を毎朝メールにてお届けします。
+      %p
+        %b 毎朝献立が気になっちゃうあなたにオススメ！
+    = mail_to APP_CONFIG['sender-mail'], "登録する(空メールを送信)"
+
+  %h3 ■Ryo-Lunch Twitter Bot
+  %center
+    %font{size: 2}
+      %p
+        寮の献立をTwitterで配信！
+        %br
+        朝，昼，夕それぞれの時間帯につぶやきます。
+      %p
+        %b Twitterをよく使うあなたにオススメ！
+    = link_to '＠RyoLunchをフォロー', 'http://mobile.twittwe.com/RyoLunch'
+  
+  %h3 ■Ryo-Lunch Web
+  %center
+    %font{size: 2}
+      %p
+        今、ちょうどあなたが見ているこのサイトの事です。
+        PCやスマートフォンからも閲覧することができます。
+      %p
+        %b Ryo-Lunchをたまにチェックしたいあなたにオススメ！
+
+  %hr
+  %center
+    %font{size: 2}
+      (C) 2012 長野高専寮生会 食堂委員会
+      %br
+      Powered by 情報技術研究部
