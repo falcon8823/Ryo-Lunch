@@ -5,6 +5,7 @@
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
     %title Ryo-Lunch
     = stylesheet_link_tag "normal/application", media: :all
+    %link{rel: 'alternate', type: 'application/atom+xml', href: daily_menus_path(format: :atom)}
     = csrf_meta_tags
   %body
     %header
