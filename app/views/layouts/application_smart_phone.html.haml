@@ -6,6 +6,7 @@
     %title
       = @title ? "#{@title} | Ryo-Lunch" : "Ryo-Lunch"
     = stylesheet_link_tag "smart-phone/application", media: :all
+    %link{rel: 'alternate', type: 'application/atom+xml', href: daily_menus_path(format: :atom)}
     = csrf_meta_tags
   %body
     %div{data: {role: :page}}
