@@ -1,13 +1,3 @@
-%div{data:{role: 'collapsible-set'}}
-  %div{data:{role: 'collapsible'}}
-    %h3 Ryo-Lunchがリニューアル！
-    %p
-      Ryo-Lunchが情報技術研究部によってリニューアルされました！
-      %br
-      以前は食堂委員長が毎朝手動で送信していましたが、
-      これからはすべて自動で配信されるようになります。
-      %br
-      また、メールだけでなく様々な形態でRyo-Lunchコンテンツの提供をしていきます！
 
 = render partial: 'daily_menus/menu', 
   locals: {menu: @today, date_str: "今日(#{l(Date.today, format: :very_short)})"}
