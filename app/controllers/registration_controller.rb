@@ -3,6 +3,7 @@
 class RegistrationController < ApplicationController
   # GET /registration/activate
   def activate
+    @title = "Ryo-Lunch / 配信登録"
     code = params[:activation_code]
     if code
       user = User.inactive.find_by_activation_code(code)
@@ -23,6 +24,7 @@ class RegistrationController < ApplicationController
   
   # GET /registration/stopping
   def stopping
+    @title = "Ryo-Lunch / 配信停止"
     code = params[:activation_code]
     if code
       user = User.active.find_by_activation_code(code)

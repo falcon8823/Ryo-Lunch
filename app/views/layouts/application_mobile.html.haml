@@ -1,6 +1,6 @@
 %html
   %head
-    %title Ryo-Lunch
+    %title= @title ? @title : "Ryo-Lunch"
     = csrf_meta_tags
   %body{bgcolor: '#ffffcc'}
     = yield
