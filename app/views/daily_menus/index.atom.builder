@@ -1,8 +1,9 @@
 atom_feed do |feed|
+  menus = DailyMenu.for_rss
   feed.title 'Ryo-Lunch RSS'
-  feed.updated @daily_menus.last.created_at
+  feed.updated Date.today
 
-  @daily_menus.each do |menu|
+  menus.each do |menu|
     feed.entry(menu,
       url: daily_menu_url(menu),
       published: menu.created_at,
@@ -21,8 +22,6 @@ atom_feed do |feed|
 【夕食】<br />
 #{menu.dinner.gsub(/\r\n|\n|\r/, ' / ')}
 
-<br />
-<a href="#{daily_menu_url(menu)}">#{daily_menu_url(menu)}</a>
 EOS
     end
   end
