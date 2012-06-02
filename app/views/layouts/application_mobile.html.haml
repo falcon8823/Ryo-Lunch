@@ -1,6 +1,8 @@
 %html
   %head
     %title= @title ? @title : "Ryo-Lunch"
+    %meta{name: 'description', content: '長野高専 寮食堂の献立をお届け！'}
+    %meta{name: 'keywords', content: 'Ryo-Lunch,長野高専,寮食堂,寮,情報技術研究部'}
     = csrf_meta_tags
   %body{bgcolor: '#ffffcc'}
     = yield
