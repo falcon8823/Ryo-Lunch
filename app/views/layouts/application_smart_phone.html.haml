@@ -3,8 +3,10 @@
   %head
     %meta{charset: 'utf-8'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+    %meta{name: 'description', content: '長野高専 寮食堂の献立をお届け！'}
+    %meta{name: 'keywords', content: 'Ryo-Lunch,長野高専,寮食堂,寮,情報技術研究部'}
     %title
-      = @title ? "#{@title} | Ryo-Lunch" : "Ryo-Lunch"
+      = @title ? "#{@title}" : "Ryo-Lunch"
     = stylesheet_link_tag "smart-phone/application", media: :all
     %link{rel: 'alternate', type: 'application/atom+xml', href: daily_menus_path(format: :atom)}
     = csrf_meta_tags

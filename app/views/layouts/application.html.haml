@@ -3,7 +3,10 @@
   %head
     %meta{charset: 'utf-8'}
     %meta{name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
-    %title Ryo-Lunch
+    %meta{name: 'description', content: '長野高専 寮食堂の献立をお届け！'}
+    %meta{name: 'keywords', content: 'Ryo-Lunch,長野高専,寮食堂,寮,情報技術研究部'}
+
+    %title= @title ? @title : 'Ryo-Lunch'
     = stylesheet_link_tag "normal/application", media: :all
     %link{rel: 'alternate', type: 'application/atom+xml', href: daily_menus_path(format: :atom)}
     = csrf_meta_tags
@@ -41,7 +44,7 @@
         .row
           .span4.credit
             %h2= link_to "Ryo-Lunch", root_path
-            %p 寮食堂の献立配信サービス
+            %p 長野高専 寮食堂の献立配信サービス
             %p
               Ryo-Lunchについてのお問い合わせは
               = mail_to APP_CONFIG['support-mail'], 'こちら',
