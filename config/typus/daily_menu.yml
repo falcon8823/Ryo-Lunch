@@ -2,7 +2,7 @@
 
 DailyMenu:
   fields:
-    default: id, date, breakfast, lunch, dinner
-    form: date, breakfast, lunch, dinner
+    default: id, date, breakfast, lunch, dinner, breakfast_photo, lunch_photo, dinner_photo
+    form: date, breakfast, lunch, dinner, breakfast_photo, lunch_photo, dinner_photo
   relationships: 
   application: Application

@@ -1,5 +1,8 @@
 .row
   .span12
+    = link_to '献立表に戻る', daily_menus_path, class: 'btn btn-primary'
+.row
+  .span12
     .page-header
       %h1
         = l @daily_menu.date, format: :long
@@ -13,6 +16,7 @@
       %ul
         - @daily_menu.breakfast.each_line do |i|
           %li= i
+    = image_tag @daily_menu.breakfast_photo.url(:medium), class: 'img-polaroid'
   .span4
     .well
       %h2 昼食
@@ -20,6 +24,7 @@
       %ul
         - @daily_menu.lunch.each_line do |i|
           %li= i
+    = image_tag @daily_menu.lunch_photo.url(:medium), class: 'img-polaroid'
   .span4
     .well
       %h2 夕食
@@ -27,7 +32,5 @@
       %ul
         - @daily_menu.dinner.each_line do |i|
           %li= i
+    = image_tag @daily_menu.dinner_photo.url(:medium), class: 'img-polaroid'
 
-.row
-  .span12
-    = link_to '献立表に戻る', daily_menus_path, class: 'btn btn-primary'

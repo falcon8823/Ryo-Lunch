@@ -18,16 +18,19 @@
       %ul
         - @today.breakfast.each_line do |i|
           %li= i
+      = image_tag @today.breakfast_photo.url(:medium), class: 'img-polaroid'
     .span4
       %h2 昼食
       %ul
         - @today.lunch.each_line do |i|
           %li= i
+      = image_tag @today.lunch_photo.url(:medium), class: 'img-polaroid'
     .span4
       %h2 夕食
       %ul
         - @today.dinner.each_line do |i|
           %li= i
+      = image_tag @today.dinner_photo.url(:medium), class: 'img-polaroid'
 - else
   .row
     .span12

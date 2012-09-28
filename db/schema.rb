@@ -11,15 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120425152432) do
+ActiveRecord::Schema.define(:version => 20120928160453) do
 
   create_table "daily_menus", :force => true do |t|
     t.date     "date"
     t.text     "breakfast"
     t.text     "lunch"
     t.text     "dinner"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "breakfast_photo_file_name"
+    t.string   "breakfast_photo_content_type"
+    t.integer  "breakfast_photo_file_size"
+    t.datetime "breakfast_photo_updated_at"
+    t.string   "lunch_photo_file_name"
+    t.string   "lunch_photo_content_type"
+    t.integer  "lunch_photo_file_size"
+    t.datetime "lunch_photo_updated_at"
+    t.string   "dinner_photo_file_name"
+    t.string   "dinner_photo_content_type"
+    t.integer  "dinner_photo_file_size"
+    t.datetime "dinner_photo_updated_at"
   end
 
   create_table "users", :force => true do |t|

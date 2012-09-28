@@ -1,4 +1,25 @@
 class DailyMenu < ActiveRecord::Base
+  #attr_accessible :breakfast_photo, :lunch_photo, :dinner_photo
+  has_attached_file :breakfast_photo,
+    {
+      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :url => "/photos/:hash.:extension",
+      :hash_secret => "ryo-lunch-s-photo"
+    }
+  has_attached_file :lunch_photo,
+    {
+      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :url => "/photos/:hash.:extension",
+      :hash_secret => "ryo-lunch-s-photo"
+    }
+  has_attached_file :dinner_photo,
+    {
+      :styles => { :medium => "300x300>", :thumb => "100x100>" },
+      :url => "/photos/:hash.:extension",
+      :hash_secret => "ryo-lunch-s-photo"
+    }
+
+
   # Scope
   scope :desc_by_date, order('daily_menus.date DESC')
   scope :asc_by_date, order('daily_menus.date DESC')

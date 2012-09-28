@@ -44,5 +44,5 @@ RyoLunch::Application.configure do
     host: 'localhost:3000'
   }
 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/local/Cellar/imagemagick/6.7.7-6/bin/"
 end
