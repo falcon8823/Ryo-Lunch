@@ -1,32 +1,20 @@
 - if menu
-  %ul{data: {role: :listview, inset: :true}}
+  %ul.ul-listview{data: {role: :listview, inset: :true}}
     - if date_str
       %li{data:{role: 'list-divider'}}
         %h2
           -#= "今日(#{l Date.today, format: :very_short})"
           = date_str
           のメニュー
-    %li
-      朝食
-      %ul
-        - menu.breakfast.each_line do |i|
-          %li= i
-        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
-        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
-    %li
-      昼食
-      %ul
-        - menu.lunch.each_line do |i|
-          %li= i
-        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
-        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
-    %li
-      夕食
-      %ul
-        - menu.dinner.each_line do |i|
-          %li= i
-        = link_to "戻る", :back, data: {role: :button, icon: 'arrow-l'}
-        = link_to "Homeへ", root_path, data: {role: :button, icon: 'home'}
+    %li{data: {role: 'list-divider'}} 朝食
+    - menu.breakfast.each_line do |i|
+      %li= i
+    %li{data: {role: 'list-divider'}} 昼食
+    - menu.lunch.each_line do |i|
+      %li= i
+    %li{data: {role: 'list-divider'}} 夕食
+    - menu.dinner.each_line do |i|
+      %li= i
 - else
   %h3 献立データが登録されていません。
 
