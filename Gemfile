@@ -7,6 +7,7 @@ gem 'jquery-rails', '2.0.2'
 gem 'haml-rails', '0.3.4'
 gem 'rails-i18n', '0.3.0'
 gem 'twitter'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
 	gem 'rspec-rails', '2.8.1'
