@@ -5,6 +5,8 @@ development:
   t_consumer_secret:
   t_access_token:
   t_access_token_secret:
+  admin_users:
+    admin: 'bb3a42cc430b8dfca9acbac0bf4996cf' # username: admin, pass: admin
 production:
   sender-mail: sample@sample.com
   support-mail: sample-support@sample.com
@@ -12,6 +14,7 @@ production:
   t_consumer_secret:
   t_access_token:
   t_access_token_secret:
+  admin_users:
 test:
   sender-mail: sample@sample.com
   support-mail: sample-support@sample.com
@@ -19,4 +22,5 @@ test:
   t_consumer_secret:
   t_access_token:
   t_access_token_secret:
+  admin_users:
 
