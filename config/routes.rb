@@ -3,6 +3,7 @@ RyoLunch::Application.routes.draw do
     resources :daily_menus, except: [ :show ]
     resources :users, except: [ :show ]
   end
+  get "/admin" => redirect("/admin/daily_menus"), as: :admin
 
   get "registration/activate"
   get "registration/stopping"
