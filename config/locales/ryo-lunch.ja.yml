@@ -7,13 +7,14 @@ ja:
     models:
       daily_menu: "献立表"
       user: "利用者"
-    
+
     attributes:
       daily_menu:
         date: "日付"
         breakfast: "朝食"
         lunch: "昼食"
         dinner: "夕食"
+        footer: "フッター"
       user:
         email: "メールアドレス"
         active: "有効"
