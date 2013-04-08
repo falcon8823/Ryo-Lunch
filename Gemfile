@@ -6,9 +6,7 @@ gem 'jpmobile', '3.0.3'
 gem 'jquery-rails', '2.0.2'
 gem 'haml-rails', '0.3.4'
 gem 'rails-i18n', '0.3.0'
-gem 'typus', '3.1.10'
 gem 'twitter'
-gem 'will_paginate', '~> 3.0'
 
 group :development, :test do
 	gem 'rspec-rails', '2.8.1'
