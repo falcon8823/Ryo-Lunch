@@ -1,0 +1,29 @@
+- model_class = DailyMenu
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:date)
+      %th= model_class.human_attribute_name(:breakfast)
+      %th= model_class.human_attribute_name(:lunch)
+      %th= model_class.human_attribute_name(:dinner)
+      %th= model_class.human_attribute_name(:footer)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @daily_menus.each do |daily_menu|
+      %tr
+        %td= link_to daily_menu.id, admin_daily_menu_path(daily_menu)
+        %td= daily_menu.date
+        %td= daily_menu.breakfast
+        %td= daily_menu.lunch
+        %td= daily_menu.dinner
+        %td= daily_menu.footer
+        %td=l daily_menu.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_daily_menu_path(daily_menu), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_daily_menu_path(daily_menu), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_admin_daily_menu_path, :class => 'btn btn-primary'
