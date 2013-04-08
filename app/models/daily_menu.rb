@@ -1,4 +1,6 @@
 class DailyMenu < ActiveRecord::Base
+  attr_accessible :date, :breakfast, :lunch, :dinner, :footer
+
   # Scope
   scope :desc_by_date, order('daily_menus.date DESC')
   scope :asc_by_date, order('daily_menus.date DESC')
