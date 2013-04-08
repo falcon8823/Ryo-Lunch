@@ -1,5 +1,12 @@
 = form_for [:admin, @user], :html => { :class => 'form-horizontal' } do |f|
-  .control-group
+  - if @user.errors.any?
+    .alert.alert-block.fade.in.alert-error
+      %h4 エラー
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  %div{class: "control-group #{'error' unless @user.errors[:email].blank?}"}
     = f.label :email, :class => 'control-label'
     .controls
       = f.text_field :email, :class => 'text_field'
@@ -7,6 +14,9 @@
     = f.label :active, :class => 'control-label'
     .controls
       = f.check_box :active, :class => 'check_box'
+
   .form-actions
-    = f.submit nil, :class => 'btn btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_users_path, :class => 'btn'
+    = f.submit '保存して新規作成', name: :to_new, :class => 'btn btn-primary'
+    = f.submit '保存のみ', name: :save, :class => 'btn btn-success'
+    = f.submit '保存して終了', name: :to_index, :class => 'btn btn-danger'
+    = link_to 'キャンセル', admin_users_path, :class => 'btn'

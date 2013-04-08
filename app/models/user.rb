@@ -1,6 +1,8 @@
+# encoding: utf-8
+
 # coding: utf-8
 class User < ActiveRecord::Base
-  attr_accessible :email
+  attr_accessible :email, :active
 
   validates :email,
     uniqueness: true,
