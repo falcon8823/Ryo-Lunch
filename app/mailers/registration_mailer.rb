@@ -46,12 +46,10 @@ class RegistrationMailer < Jpmobile::Mailer::Base
     else
       # ユーザが存在しない場合
       # 登録処理へ
-      user = User.create!(
-        email: email,
-        active: false,
-        activation_start: Time.now,
-        activation_code: SecureRandom.hex(16).to_s
-      )
+      user = User.new(email: email, active: false)
+      user.activation_start = Time.now
+      user.activation_code = SecureRandom.hex(16).to_s
+      user.save!
 
       RegistrationMailer.activation_mail(user).deliver
     end
