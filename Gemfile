@@ -8,6 +8,7 @@ gem 'haml-rails', '0.3.4'
 gem 'rails-i18n', '0.3.0'
 gem 'twitter'
 gem 'twitter-bootstrap-rails'
+gem 'kaminari'
 
 group :development, :test do
 	gem 'rspec-rails', '2.8.1'

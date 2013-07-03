@@ -6,3 +6,4 @@
         - @daily_menus.each do |m|
           %li
             %h5= link_to l(m.date, format: :short), m
+    = paginate @daily_menus

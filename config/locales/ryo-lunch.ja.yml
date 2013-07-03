@@ -20,3 +20,10 @@ ja:
         active: "有効"
         activation_code: "認証コード"
         activation_start: "認証期間開始時刻"
+  views:
+    pagination:
+      first: "&laquo; 先頭"
+      last: "末尾 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."

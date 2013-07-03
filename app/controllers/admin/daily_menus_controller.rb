@@ -4,7 +4,7 @@ class Admin::DailyMenusController < Admin::ApplicationController
   before_filter :set_daily_menu, only: [ :edit, :update, :destroy ]
 
   def index
-    @daily_menus = DailyMenu.desc_by_date
+    @daily_menus = DailyMenu.desc_by_date.page(params[:page]).per(20)
   end
 
   def new

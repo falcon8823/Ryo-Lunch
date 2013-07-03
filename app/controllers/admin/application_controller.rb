@@ -1,6 +1,6 @@
 class Admin::ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :digest_auth
+  before_filter :digest_auth if Rails.env.production?
 
   private
 

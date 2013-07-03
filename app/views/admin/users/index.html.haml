@@ -20,4 +20,5 @@
           %i{class: "icon-#{user.active ? 'ok' : 'remove'}"}
         %td= user.email
         %td=l user.created_at
+= paginate @users
 

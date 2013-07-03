@@ -4,7 +4,7 @@ class Admin::UsersController < Admin::ApplicationController
   before_filter :set_user, only: [ :edit, :update, :destroy ]
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(20)
   end
 
   def new
