@@ -11,35 +11,20 @@
     %link{rel: 'alternate', type: 'application/atom+xml', href: daily_menus_path(format: :atom)}
     = csrf_meta_tags
   %body
-    -#%header
+    %header
       .navbar
         .navbar-inner
-          %a.btn.btn-navbar{data: {toggle: :collapse, target: '.nav-collapse'}}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{href: root_path}
-            = image_tag 'n_logo.png', width: '100px'
-          .nav-collapse
-            %ul.nav
-              %li= link_to "今日の献立", DailyMenu.today
-              %li= link_to "献立表", daily_menus_path
-    %header
-      .container
-        .contents#top-nav
-          .row
-            .span12
-              %ul.nav.nav-tabs
-                %li= link_to "トップ", root_path
+          .container
+            %a.btn.btn-navbar{data: {toggle: :collapse, target: '.nav-collapse'}}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.brand{href: root_path}
+              = image_tag 'n_logo.png', width: '100px'
+            .nav-collapse
+              %ul.nav
                 %li= link_to "今日の献立", DailyMenu.today
                 %li= link_to "献立表", daily_menus_path
-          .row
-            .span12
-
-              .hero-unit
-                = image_tag 's_logo.png', width: '300px'
-                %p 長野高専 寮食堂の献立をお届けします。
-
     -if notice
       .alert-message.alert-info.hide
         %h4= notice
@@ -50,7 +35,9 @@
       .alert-message.alert-danger.hide
         %h4= danger
 
-    = yield
+    .container
+      .contents
+        = yield
 
     %footer
       .container.well
@@ -65,7 +52,7 @@
               から
 
             %p
-              Source code is on
+              Source code is on 
               = link_to "GitHub", "https://github.com/falcon8823/Ryo-Lunch"
               %br
               Powered by
@@ -87,5 +74,5 @@
               %li= link_to "長野高専 学生寮", "http://nagano-nct-ryo.jimdo.com/"
               %li= link_to "情報技術研究部", "http://jo-ken.info/"
           .span4
-            %p
+            %p 
     = javascript_include_tag "normal/application"

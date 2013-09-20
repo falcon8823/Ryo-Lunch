@@ -1,35 +1,33 @@
-.container
-  .contents
-    .row
-      .span12
-        .page-header
-          %h1
-            = l @daily_menu.date, format: :long
-            のメニュー
+.row
+  .span12
+    .page-header
+      %h1
+        = l @daily_menu.date, format: :long
+        のメニュー
 
-    .row
-      .span4
-        .well
-          %h2 朝食
-          %hr
-          %ul
-            - @daily_menu.breakfast.each_line do |i|
-              %li= i
-      .span4
-        .well
-          %h2 昼食
-          %hr
-          %ul
-            - @daily_menu.lunch.each_line do |i|
-              %li= i
-      .span4
-        .well
-          %h2 夕食
-          %hr
-          %ul
-            - @daily_menu.dinner.each_line do |i|
-              %li= i
+.row
+  .span4
+    .well
+      %h2 朝食
+      %hr
+      %ul
+        - @daily_menu.breakfast.each_line do |i|
+          %li= i
+  .span4
+    .well
+      %h2 昼食
+      %hr
+      %ul
+        - @daily_menu.lunch.each_line do |i|
+          %li= i
+  .span4
+    .well
+      %h2 夕食
+      %hr
+      %ul
+        - @daily_menu.dinner.each_line do |i|
+          %li= i
 
-    .row
-      .span12
-        = link_to '献立表に戻る', daily_menus_path, class: 'btn btn-primary'
+.row
+  .span12
+    = link_to '献立表に戻る', daily_menus_path, class: 'btn btn-primary'

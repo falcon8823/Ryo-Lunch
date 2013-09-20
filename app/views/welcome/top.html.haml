@@ -1,94 +1,95 @@
-.container
-  .contents
+.row
+  .span12
+    .hero-unit
+      = image_tag 's_logo.png', width: '300px'
+      %p 長野高専 寮食堂の献立をお届けします。
+
+      
+- if @today
+  .row
+    .span12
+      .page-header
+        %h1
+          = link_to "今日(#{l(Date.today, format: :very_short)})のメニュー",
+            @today
+  .row
+    .span4
+      %h2 朝食
+      %ul
+        - @today.breakfast.each_line do |i|
+          %li= i
+    .span4
+      %h2 昼食
+      %ul
+        - @today.lunch.each_line do |i|
+          %li= i
+    .span4
+      %h2 夕食
+      %ul
+        - @today.dinner.each_line do |i|
+          %li= i
+- else
+  .row
+    .span12
+      %h2 今日の献立が登録されていません。
 
 
-    - if @today
-      .row
-        .span12
-          .page-header
-            %h2
-              = link_to "今日(#{l(Date.today, format: :very_short)})のメニュー",
-                @today
-      .row
-        .span4
-          %h2 朝食
-          %ul
-            - @today.breakfast.each_line do |i|
-              %li= i
-        .span4
-          %h2 昼食
-          %ul
-            - @today.lunch.each_line do |i|
-              %li= i
-        .span4
-          %h2 夕食
-          %ul
-            - @today.dinner.each_line do |i|
-              %li= i
-    - else
-      .row
-        .span12
-          %h2 今日の献立が登録されていません。
+.row
+  .span12
+    %p &nbsp;
+    %div{align: :center}
+      %h1 Ryo-Lunchのお届けする3サービス
+      %p あなたにぴったりのサービスを用意しました。
+      %hr
 
+.row
+  .span4
+    .page-header
+      %h2 Ryo-Lunch Mail
+    %p
+      これまでのシステムと同様に，
+      献立を毎朝メールにてお届けします。
+      %br
+      毎朝8時頃にその日の昼食，夕食，次の日の朝食の献立をお届けします。
+    %p
+      %b 毎朝献立が気になっちゃうあなたにオススメ！
 
-.container
-  .contents
-    .row
-      .span12
-        %p &nbsp;
-        %div{align: :center}
-          %h1 Ryo-Lunchのお届けする3サービス
-          %p あなたにぴったりのサービスを用意しました。
-          %hr
+    %div{align: :center}
+      = image_tag 'qr_mail.jpg'
+      %br
+      = mail_to APP_CONFIG['sender-mail'], '登録する（空メールを送信）',
+        encode: :javascript, class: 'btn btn-primary'
 
-    .row
-      .span4
-        .page-header
-          %h2 Ryo-Lunch Mail
-        %p
-          これまでのシステムと同様に，
-          献立を毎朝メールにてお届けします。
-          %br
-          毎朝8時頃にその日の昼食，夕食，次の日の朝食の献立をお届けします。
-        %p
-          %b 毎朝献立が気になっちゃうあなたにオススメ！
+  .span4
+    .page-header
+      %h2
+        Ryo-Lunch Twitter Bot
+    %p
+      寮の献立をTwitterで配信！
+      %br
+      朝，昼，夕それぞれの時間帯につぶやきます。
+    %p
+      寮食堂の前で並んでいるときにふとタイムラインを見れば、
+      ちょうど良くRyo-Lunchが今日の献立を教えてくれます。
+    %p
+      %b Twitterをよく使うあなたにオススメ！
 
-        %div{align: :center}
-          = image_tag 'qr_mail.jpg'
-          %br
-          = mail_to APP_CONFIG['sender-mail'], '登録する（空メールを送信）',
-            encode: :javascript, class: 'btn btn-primary'
+    %div{align: :center}
+      = link_to '＠RyoLunchをフォロー', 'http://twitter.com/RyoLunch', class: 'btn btn-primary'
 
-      .span4
-        .page-header
-          %h2
-            Ryo-Lunch Twitter Bot
-        %p
-          寮の献立をTwitterで配信！
-          %br
-          朝，昼，夕それぞれの時間帯につぶやきます。
-        %p
-          寮食堂の前で並んでいるときにふとタイムラインを見れば、
-          ちょうど良くRyo-Lunchが今日の献立を教えてくれます。
-        %p
-          %b Twitterをよく使うあなたにオススメ！
-
-        %div{align: :center}
-          = link_to '＠RyoLunchをフォロー', 'http://twitter.com/RyoLunch', class: 'btn btn-primary'
-
-      .span4
-        .page-header
-          %h2 Ryo-Lunch Web
-        %p
-          今、ちょうどあなたが見ているこのサイトの事です。
-          %br
-          PC，スマートフォン，フィーチャーフォンなどで閲覧することができます。
-          %br
-          それぞれの端末に最適化した表示で提供します。
-        %p
-          %b Ryo-Lunchをたまにチェックしたいあなたにオススメ！
-
-        %div{align: :center}
-          = image_tag 'qr_web.jpg'
-          %br
-          %b= link_to 'http://ryo-lunch.jo-ken.info', 'http://ryo-lunch.jo-ken.info'
+  .span4
+    .page-header
+      %h2 Ryo-Lunch Web
+    %p
+      今、ちょうどあなたが見ているこのサイトの事です。
+      %br
+      PC，スマートフォン，フィーチャーフォンなどで閲覧することができます。
+      %br
+      それぞれの端末に最適化した表示で提供します。
+    %p
+      %b Ryo-Lunchをたまにチェックしたいあなたにオススメ！
+    
+    %div{align: :center}
+      = image_tag 'qr_web.jpg'
+      %br
+      %b= link_to 'http://ryo-lunch.jo-ken.info', 'http://ryo-lunch.jo-ken.info'
