@@ -7,7 +7,7 @@ class MenuMailer < ActionMailer::Base
   def today
     @today = DailyMenu.today
 
-    if @today.nil?
+    if @today.nil? || @today.lunch.blank? || @today.dinner.blank?
       raise
     end
 
@@ -24,7 +24,7 @@ class MenuMailer < ActionMailer::Base
     raise if menu.nil?
     menu_str = menu.breakfast
 
-    tweet menu_str, Date.today, "朝食", menu
+    tweet menu_str, Date.today, "朝食", menu if menu_str.present?
   end
 
   def t_today_lunch
@@ -32,7 +32,7 @@ class MenuMailer < ActionMailer::Base
     raise if menu.nil?
     menu_str = menu.lunch
 
-    tweet menu_str, Date.today, "昼食", menu
+    tweet menu_str, Date.today, "昼食", menu if menu_str.present?
   end
 
   def t_today_dinner
@@ -40,7 +40,7 @@ class MenuMailer < ActionMailer::Base
     raise if menu.nil?
     menu_str = menu.dinner
 
-    tweet menu_str, Date.today, "夕食", menu
+    tweet menu_str, Date.today, "夕食", menu if menu_str.present?
   end
 
   private
